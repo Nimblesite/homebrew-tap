@@ -26,6 +26,6 @@ class DartMutant < Formula
   end
 
   test do
-    assert_match "dart_mutant", shell_output("#{bin}/dart_mutant --version")
+    assert_match "dart_mutant", shell_output("\#{bin}/dart_mutant --version")
   end
 end
