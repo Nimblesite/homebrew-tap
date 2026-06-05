@@ -1,28 +1,28 @@
 class Deslop < Formula
   desc "Live duplicate-code analysis server for AI coding agents"
   homepage "https://github.com/Nimblesite/Deslop"
-  version "0.5.0"
+  version "0.5.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Nimblesite/Deslop/releases/download/v0.5.0/deslop-0.5.0-macos-arm64.tar.gz"
-      sha256 "46f5adb2b18899542ec25caa0bd76a4458682d964074bcb58b1f198c921ae65c"
+      url "https://github.com/Nimblesite/Deslop/releases/download/v0.5.1/deslop-0.5.1-macos-arm64.tar.gz"
+      sha256 "4a4e02478225242a59295cadf4efcb50c21a2c313a7f08a48cf8a8080c55134a"
     end
     on_intel do
-      url "https://github.com/Nimblesite/Deslop/releases/download/v0.5.0/deslop-0.5.0-macos-x64.tar.gz"
-      sha256 "c522bbaa91348a6ffa269999670c1c951808c4697aba7210c9d57baa2df5c9ed"
+      url "https://github.com/Nimblesite/Deslop/releases/download/v0.5.1/deslop-0.5.1-macos-x64.tar.gz"
+      sha256 "c109dd9cc1185eef3c0497d8144c745b31bd5b086469c8feb0ab1f2cff0e043e"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Nimblesite/Deslop/releases/download/v0.5.0/deslop-0.5.0-linux-arm64.tar.gz"
-      sha256 "515e2b93e35d66490bd0f3fd4a4fd82d4d077a7ff916d15ce5fd92389160855b"
+      url "https://github.com/Nimblesite/Deslop/releases/download/v0.5.1/deslop-0.5.1-linux-arm64.tar.gz"
+      sha256 "1eff82c334b4be1dfbdb880f5c01d7edb06d99f94692c2a155b6a97fd4117966"
     end
     on_intel do
-      url "https://github.com/Nimblesite/Deslop/releases/download/v0.5.0/deslop-0.5.0-linux-x64.tar.gz"
-      sha256 "04dade135b760b393982a1af35eafcaa243d447195aa386c3d03fbe947b59276"
+      url "https://github.com/Nimblesite/Deslop/releases/download/v0.5.1/deslop-0.5.1-linux-x64.tar.gz"
+      sha256 "a87dc69f8c7e28318bfea349219cf1739f65fcc770a95a6df346f96f4f875228"
     end
   end
 
@@ -33,6 +33,6 @@ class Deslop < Formula
   end
 
   test do
-    assert_match "0.5.0", shell_output("#{bin}/deslop --version")
+    assert_match "0.5.1", shell_output("#{bin}/deslop --version")
   end
 end
