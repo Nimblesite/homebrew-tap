@@ -5,27 +5,27 @@ class Napper < Formula
   desc "CLI-first, test-oriented HTTP API testing tool. Send requests, run assertions, manage environments."
   homepage "https://napperapi.dev"
   license "MIT"
-  version "0.13.6"
+  version "0.13.7"
 
   on_macos do
     on_arm do
-      url "https://github.com/Nimblesite/napper/releases/download/v0.13.6/napper-v0.13.6-osx-arm64.tar.gz"
-      sha256 "6c5fae7d9c5536f5f7a99b0edad27736a00b07e397a0bd6d6348f5583a853ba7"
+      url "https://github.com/Nimblesite/napper/releases/download/v0.13.7/napper-v0.13.7-osx-arm64.tar.gz"
+      sha256 ""
     end
     on_intel do
-      url "https://github.com/Nimblesite/napper/releases/download/v0.13.6/napper-v0.13.6-osx-x64.tar.gz"
-      sha256 "095b78577ee9271b26b3a8d9793b1e55ba031a5471ad03479919792eb6e78daf"
+      url "https://github.com/Nimblesite/napper/releases/download/v0.13.7/napper-v0.13.7-osx-x64.tar.gz"
+      sha256 "eca353f17ae5c211a752a14c7122dc6052828eae5a9f735af3861b158164645d"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Nimblesite/napper/releases/download/v0.13.6/napper-v0.13.6-linux-arm64.tar.gz"
-      sha256 "4acd8b355c7d7d1399fb002dbcae5b98c9a0999ff84591b97079043e48b3d748"
+      url "https://github.com/Nimblesite/napper/releases/download/v0.13.7/napper-v0.13.7-linux-arm64.tar.gz"
+      sha256 "3e0c83f9f9b950818b20b8bec3a9ad0231b1fe01def9a04e0055192aa5fa1ba6"
     end
     on_intel do
-      url "https://github.com/Nimblesite/napper/releases/download/v0.13.6/napper-v0.13.6-linux-x64.tar.gz"
-      sha256 "76ee08c6e1892f7146db868587551ec383bebfce824f046f0ddbb84c2acc09a5"
+      url "https://github.com/Nimblesite/napper/releases/download/v0.13.7/napper-v0.13.7-linux-x64.tar.gz"
+      sha256 "90293d48e578c3fe8df647fc083d8a8ffb29245b66c94701c8f4974de356b4c9"
     end
   end
 
