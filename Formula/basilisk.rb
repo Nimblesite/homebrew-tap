@@ -4,24 +4,24 @@
 class Basilisk < Formula
   desc "Strict-by-default Python type checker and LSP, built in Rust"
   homepage "https://www.basilisk-python.dev"
-  version "0.2.0"
+  version "0.1.0-alpha"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.2.0/basilisk-aarch64-apple-darwin.zip"
-      sha256 "88d632dabfef9cf41e568b2262d355ec328a96a4240ba3a48aab46828389b3b1"
+      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.1.0-alpha/basilisk-aarch64-apple-darwin.zip"
+      sha256 "5b97109d74d43cce0b6166dfe623347dba0b60c5f673f5bbb3893fc015e0c019"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.2.0/basilisk-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "9b4bf428b7a975d2a8819b7193c59e148d0e9664f48e479e618565470d494ed1"
+      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.1.0-alpha/basilisk-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "514c8c70279b1705aff58353717e8415fc457ebd48dc34b53d0c34c0f68babe5"
     end
     on_arm do
-      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.2.0/basilisk-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "e9d47975080efa24b1c21247f8c2a0f1e363ac85bbcf602aa60170d445565ecd"
+      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.1.0-alpha/basilisk-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1285e68cd647453fa7d65db9d7b9443546e9279b418d83ab5ee224d53368d65d"
     end
   end
 
