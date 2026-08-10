@@ -2,26 +2,26 @@
 # frozen_string_literal: true
 
 class Basilisk < Formula
-  desc "Strict-by-default Python type checker and LSP, built in Rust"
+  desc "Basilisk's type checker produced incorrect results. Basilisk is unlisted and is being rebuilt from the ground up as a new product."
   homepage "https://www.basilisk-python.dev"
-  version "0.41.1"
+  version "0.41.2"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.41.1/basilisk-aarch64-apple-darwin.zip"
-      sha256 "4dfcd0072967cd77cf884415a3cb0a5d2022d5244471ff7dd87130199ee08674"
+      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.41.2/basilisk-aarch64-apple-darwin.zip"
+      sha256 "bd84e83818192ed1445c0bc39f8935a2e1f3013b21658b2e81233e8980cdf58f"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.41.1/basilisk-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "88a5e43b2cf246efbe2a2a748577a045b9bc70f2beb65cdd5d1024ca8f61ee26"
+      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.41.2/basilisk-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "787c0ba831aca4ce5d71233d9a2ccbfb82a96f6171916d0f510741e4c802f728"
     end
     on_arm do
-      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.41.1/basilisk-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "68c5f90ac92e5b2808c4fee9b880168948cfc363a52fa8dbb473129e52810631"
+      url "https://github.com/Nimblesite/Basilisk/releases/download/v0.41.2/basilisk-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "5288adcdd00555cc2b989cdc9a74bde48f86e314da18615aba113308a7002f04"
     end
   end
 
