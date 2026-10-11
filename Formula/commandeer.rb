@@ -16,17 +16,17 @@ class Commandeer < Formula
 
   on_macos do
     on_arm do
-      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/629046560", headers: release_headers
+      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/629568533", headers: release_headers
       sha256 "f2ea961b7a3d2579d6662ee499abaa553025e7fa8101fa032b9a2e8bc7da91c5"
     end
     on_intel do
-      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/629046558", headers: release_headers
+      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/629568522", headers: release_headers
       sha256 "0bbd16a6599e5b9eb704b9ee31d19bc468bce7fae25d1cbd0dfaf0fa85f8f7dd"
     end
   end
 
   on_linux do
-    url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/629046556", headers: release_headers
+    url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/629568534", headers: release_headers
     sha256 "ede24cc23321432d35417caf7e25eb111b2f5d786960cbef2d06b8ff8bff0eef"
   end
 
