@@ -12,24 +12,24 @@ class Commandeer < Formula
 
   desc "Backend that lets Commandeer Cloud reach this computer's coding agents"
   homepage "https://nimblesite.github.io/acp_client/"
-  version "1.0.5"
+  version "1.0.7"
 
   depends_on "node"
 
   on_macos do
     on_arm do
-      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/629818858", headers: release_headers
-      sha256 "23257d9e9a7e6a198ad90552d8428c87d494045f2ffc306a7e530c4a987c52fc"
+      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/634065858", headers: release_headers
+      sha256 "2af459e432fab137de4dadef48d7f9f79c8423fc4a8f82cd3a2fee8961de2de3"
     end
     on_intel do
-      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/629818856", headers: release_headers
-      sha256 "f40cbd1eb8958f48bf117ea0de9e70e9fe6eefff314580a378f5022d08e1d931"
+      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/634065848", headers: release_headers
+      sha256 "2a481d6f72d2961891e4e7395c1deaa78fbb1a7b90c69a383df2a3855b2aea6a"
     end
   end
 
   on_linux do
-    url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/629818861", headers: release_headers
-    sha256 "c2aafcbe4937db34c6609dd9665fd4079eb49bdd76096d5683d8e2ffad71a0c0"
+    url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/634065844", headers: release_headers
+    sha256 "7e9a153a6a84514f0c3ae5577272983a269ab507410cfd4578296253e66a4f88"
   end
 
   def install
@@ -73,12 +73,13 @@ class Commandeer < Formula
       commandeer-setup prints the same enrollment line with this computer's paths.
       State and sign-in live outside this package, so brew upgrade keeps them.
       Enroll this computer once, after commandeer-setup wrote host.json:
-        #{opt_bin}/conversation-host login --github "#{broker}/host.json" "#{broker}/device.json"
+        #{opt_bin}/conversation-host login "#{broker}/host.json" "#{broker}/device.json"
+        Add --github before the two files only when the central server has GitHub sign-in configured.
     EOS
   end
 
   test do
-    assert_match "1.0.5", shell_output("#{bin}/acp-bridge --version")
+    assert_match "1.0.7", shell_output("#{bin}/acp-bridge --version")
     assert_predicate libexec/"run-backend.sh", :exist?
   end
 end
