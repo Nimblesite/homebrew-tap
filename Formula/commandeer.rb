@@ -12,24 +12,24 @@ class Commandeer < Formula
 
   desc "Backend that lets Commandeer Cloud reach this computer's coding agents"
   homepage "https://nimblesite.github.io/acp_client/"
-  version "1.0.7"
+  version "1.0.8"
 
   depends_on "node"
 
   on_macos do
     on_arm do
-      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/634065858", headers: release_headers
-      sha256 "2af459e432fab137de4dadef48d7f9f79c8423fc4a8f82cd3a2fee8961de2de3"
+      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/635824569", headers: release_headers
+      sha256 "b62ba90dcaced649ff6daa364d0b0ebf53f4f5c13e91ce3c771b957334aba3e7"
     end
     on_intel do
-      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/634065848", headers: release_headers
-      sha256 "2a481d6f72d2961891e4e7395c1deaa78fbb1a7b90c69a383df2a3855b2aea6a"
+      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/635824565", headers: release_headers
+      sha256 "7ee3211b53e745696a7dbd112c7353bc099a5a2e701faa02a21322e8e18c8e70"
     end
   end
 
   on_linux do
-    url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/634065844", headers: release_headers
-    sha256 "7e9a153a6a84514f0c3ae5577272983a269ab507410cfd4578296253e66a4f88"
+    url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/635824570", headers: release_headers
+    sha256 "1ff0de80aebf369ddfe9599260fae5b9f4487f82874b46f9c73780657ba06658"
   end
 
   def install
@@ -47,10 +47,14 @@ class Commandeer < Formula
   end
 
   service do
-    run [opt_libexec/"run-backend.sh", "--bin", opt_bin, "--runtime", opt_libexec/"agent-runtime", "--node", Formula["node"].opt_bin/"node"]
+    run ["/bin/bash", opt_libexec/"run-backend.sh", "--bin", opt_bin, "--runtime", opt_libexec/"agent-runtime", "--node", Formula["node"].opt_bin/"node"]
     working_dir HOMEBREW_PREFIX
     keep_alive true
     restart_delay 30
+    # The system /bin/bash runs the runner, not Homebrew's versioned
+    # bash its shebang would resolve to: macOS ties a folder-access
+    # grant to the responsible binary, and brew upgrade bash moves
+    # that path, which would bring the privacy prompt back.
     # A service starts without the login shell's PATH: node and the
     # adapter runtime live in the package, and the agent harnesses
     # in the user's own folders.
@@ -79,7 +83,7 @@ class Commandeer < Formula
   end
 
   test do
-    assert_match "1.0.7", shell_output("#{bin}/acp-bridge --version")
+    assert_match "1.0.8", shell_output("#{bin}/acp-bridge --version")
     assert_predicate libexec/"run-backend.sh", :exist?
   end
 end
