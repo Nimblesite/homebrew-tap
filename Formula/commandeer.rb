@@ -12,24 +12,24 @@ class Commandeer < Formula
 
   desc "Backend that lets Commandeer Cloud reach this computer's coding agents"
   homepage "https://nimblesite.github.io/acp_client/"
-  version "1.0.10"
+  version "1.0.11"
 
   depends_on "node"
 
   on_macos do
     on_arm do
-      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/638657732", headers: release_headers
-      sha256 "fe817fb673c80520615071ade8b220ff07bd91a8ce23d2f3b297d39ed0452f3d"
+      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/640594079", headers: release_headers
+      sha256 "5819f4c9108507498f7b1b58e708a9b48c411d8d69d9c02f64885ae7e9ecec11"
     end
     on_intel do
-      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/638657729", headers: release_headers
-      sha256 "eed5961557e5ed8f514074f87c61dcc4804adb8bd56c1ada5aef47df7831b3e5"
+      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/640594084", headers: release_headers
+      sha256 "309354028dbe0f15d462e90ca15108ff1546593382fea00d6ea8476a06799767"
     end
   end
 
   on_linux do
-    url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/638657728", headers: release_headers
-    sha256 "8496bd2cefd00316437bb84579bffbf25878977d3c1c06c8f1f36fef0aa192d7"
+    url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/640594077", headers: release_headers
+    sha256 "67a90b9863246dfb2014a0a7dfb4722374649058fd64ce413793fd9e993d22fd"
   end
 
   def install
@@ -83,7 +83,7 @@ class Commandeer < Formula
   end
 
   test do
-    assert_match "1.0.10", shell_output("#{bin}/acp-bridge --version")
+    assert_match "1.0.11", shell_output("#{bin}/acp-bridge --version")
     assert_predicate libexec/"run-backend.sh", :exist?
   end
 end
