@@ -12,28 +12,37 @@ class Commandeer < Formula
 
   desc "Backend that lets Commandeer Cloud reach this computer's coding agents"
   homepage "https://nimblesite.github.io/acp_client/"
-  version "1.0.12"
+  version "1.0.13"
 
   depends_on "node"
 
   on_macos do
     on_arm do
-      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/642358703", headers: release_headers
-      sha256 "b9f0f5b8510e3949560a01a1151bec10ad404e1b5e7dd84703def3ad5c9dc07b"
+      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/643254956", headers: release_headers
+      sha256 "094f7bc69934c502618f2381719da629c9d857621838de180581620195366486"
     end
     on_intel do
-      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/642358699", headers: release_headers
-      sha256 "936ecd61a462c99a22add728a2bfc10007825a14afc84b429f71190262ee5f7a"
+      url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/643254946", headers: release_headers
+      sha256 "502822f9ccd22fc65d8336454639bfe78ff9c1cb50917ab1cff4b081a15d1597"
     end
   end
 
   on_linux do
-    url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/642358698", headers: release_headers
-    sha256 "0b7eb85cc311804a4da2e2bf7c423a25310a12293beac872c525e2301fe7d352"
+    url "https://api.github.com/repos/Nimblesite/acp_client/releases/assets/643254950", headers: release_headers
+    sha256 "fd3aac0cf7a9ea6a08bb2522dbe9e482999a8affbf29b5bee006913dd92d08a5"
   end
 
   def install
-    bin.install "acp-bridge", "conversation-host"
+    # On macOS both programs stay in their signed bundle and bin
+    # links into it: macOS keys the owner's folder-access grant to
+    # the bundle, so an upgrade keeps it. [FLEET-BACKEND-RELEASE-GRANT]
+    if OS.mac?
+      libexec.install "Commandeer Cloud Backend.app"
+      bin.install_symlink libexec/"Commandeer Cloud Backend.app/Contents/MacOS/acp-bridge",
+                          libexec/"Commandeer Cloud Backend.app/Contents/MacOS/conversation-host"
+    else
+      bin.install "acp-bridge", "conversation-host"
+    end
     libexec.install "package/install.sh", "package/run-backend.sh"
     libexec.install "package/agent-runtime"
     chmod 0755, libexec/"install.sh"
@@ -52,9 +61,8 @@ class Commandeer < Formula
     keep_alive true
     restart_delay 30
     # The system /bin/bash runs the runner, not Homebrew's versioned
-    # bash its shebang would resolve to: macOS ties a folder-access
-    # grant to the responsible binary, and brew upgrade bash moves
-    # that path, which would bring the privacy prompt back.
+    # bash its shebang would resolve to, which brew upgrade bash
+    # would move out from under the service.
     # A service starts without the login shell's PATH: node and the
     # adapter runtime live in the package, and the agent harnesses
     # in the user's own folders.
@@ -83,7 +91,7 @@ class Commandeer < Formula
   end
 
   test do
-    assert_match "1.0.12", shell_output("#{bin}/acp-bridge --version")
+    assert_match "1.0.13", shell_output("#{bin}/acp-bridge --version")
     assert_predicate libexec/"run-backend.sh", :exist?
   end
 end
