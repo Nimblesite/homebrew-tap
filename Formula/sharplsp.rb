@@ -2,7 +2,7 @@
 class Sharplsp < Formula
   desc "Open-source .NET language server with C# and F# intelligence"
   homepage "https://github.com/Nimblesite/SharpLsp"
-  version "0.28.0"
+  version "0.29.0"
   license "MIT"
 
   on_macos do
@@ -11,18 +11,18 @@ class Sharplsp < Formula
     # Declaring the requirement gives Intel Macs a clear architecture error
     # instead of a 404 mid-download.
     depends_on arch: :arm64
-    url "https://github.com/Nimblesite/SharpLsp/releases/download/v0.28.0/sharplsp-darwin-arm64.tar.gz"
-    sha256 "7d4e049836d4a266b7d47719e3669a4d2bd3da369e9c9b91400443a48168e543"
+    url "https://github.com/Nimblesite/SharpLsp/releases/download/v0.29.0/sharplsp-darwin-arm64.tar.gz"
+    sha256 "e9509c10cdd74e666932c03613e12b98ffbc2708091146a43d98024b9b4dedc9"
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Nimblesite/SharpLsp/releases/download/v0.28.0/sharplsp-linux-arm64.tar.gz"
-      sha256 "46246c389a51374fa29343470e0b3a9501a04d96752beb975c0fa687318ae3a0"
+      url "https://github.com/Nimblesite/SharpLsp/releases/download/v0.29.0/sharplsp-linux-arm64.tar.gz"
+      sha256 "a9b133c39fc2a51ff5f1cb3539fcfd96887bc9564af4ebd30ba96999d804c928"
     end
     on_intel do
-      url "https://github.com/Nimblesite/SharpLsp/releases/download/v0.28.0/sharplsp-linux-x64.tar.gz"
-      sha256 "5d10e390496452aef5d345372151346933a4882f7c35096c09d96fb4f8a19a00"
+      url "https://github.com/Nimblesite/SharpLsp/releases/download/v0.29.0/sharplsp-linux-x64.tar.gz"
+      sha256 "d4e8c2bfbe13c5152e263818a7f0ab7bdb25e6c2529982d2ac2a8cdbdd8a3ef2"
     end
   end
 
