@@ -1,28 +1,28 @@
 class Deslop < Formula
   desc "Live duplicate-code analysis server for AI coding agents"
   homepage "https://github.com/Nimblesite/Deslop"
-  version "0.44.0"
+  version "0.45.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Nimblesite/Deslop/releases/download/v0.44.0/deslop-0.44.0-macos-arm64.tar.gz"
-      sha256 "4c92b907bb475e30d7be5c388e0db54749ec5631f2596f39cdfc31cb334af7bd"
+      url "https://github.com/Nimblesite/Deslop/releases/download/v0.45.0/deslop-0.45.0-macos-arm64.tar.gz"
+      sha256 "c1072668ab310cbe07ec1b743e6b407c7c6f57ad8ed8b0b36f5d0e1f871ab5af"
     end
     on_intel do
-      url "https://github.com/Nimblesite/Deslop/releases/download/v0.44.0/deslop-0.44.0-macos-x64.tar.gz"
-      sha256 "81a225fedf00a54a2c18648e508c608f1a4096664fada133e750baee0c2721fc"
+      url "https://github.com/Nimblesite/Deslop/releases/download/v0.45.0/deslop-0.45.0-macos-x64.tar.gz"
+      sha256 "0744ae8f66ea5e8b5042d513b21d3b2fe2687d73dfdbf998dce6f7ba3d3b2f1d"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Nimblesite/Deslop/releases/download/v0.44.0/deslop-0.44.0-linux-arm64.tar.gz"
-      sha256 "8e6a3091745e10a51d1f3ff08ac548372c6e3430b3356a2c64dedd6300e4915a"
+      url "https://github.com/Nimblesite/Deslop/releases/download/v0.45.0/deslop-0.45.0-linux-arm64.tar.gz"
+      sha256 "212c9a035c611ca55dff8ef9b931fbbd511bf4c1cc80d36c46318b84a0684d08"
     end
     on_intel do
-      url "https://github.com/Nimblesite/Deslop/releases/download/v0.44.0/deslop-0.44.0-linux-x64.tar.gz"
-      sha256 "63cc81871ad3b021882bc7c746a395e17cd0b42d9bd7b3a313b0e3180173ce7f"
+      url "https://github.com/Nimblesite/Deslop/releases/download/v0.45.0/deslop-0.45.0-linux-x64.tar.gz"
+      sha256 "74a6ad4b35ee33997622f7d35c13f17168f0bded96d83027265afc303d7547a3"
     end
   end
 
@@ -40,6 +40,6 @@ class Deslop < Formula
   end
 
   test do
-    assert_match "0.44.0", shell_output("#{bin}/deslop --version")
+    assert_match "0.45.0", shell_output("#{bin}/deslop --version")
   end
 end
