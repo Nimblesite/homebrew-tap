@@ -3,20 +3,20 @@
 class Osprey < Formula
   desc "Osprey — a functional language with algebraic effects, fibers, and compile-time safety"
   homepage "https://ospreylang.dev"
-  version "0.32.0"
+  version "0.33.0"
   depends_on "llvm"
 
   on_macos do
     # Apple Silicon only — no Intel mac build (see release.yml matrix).
     on_arm do
-      url "https://github.com/Nimblesite/osprey/releases/download/v0.32.0/osprey-0.32.0-darwin-arm64.tar.gz"
-      sha256 "8fec0b83735319030270bc6968daf047bdf09b7eb66a9cd7bca4f2f5c7fc141f"
+      url "https://github.com/Nimblesite/osprey/releases/download/v0.33.0/osprey-0.33.0-darwin-arm64.tar.gz"
+      sha256 "6e6c2dbe3aa1c091c19be3d1ba37a3d8c710594a77dc0f56e84c2a2471b1c9aa"
     end
   end
 
   on_linux do
-    url "https://github.com/Nimblesite/osprey/releases/download/v0.32.0/osprey-0.32.0-linux-x64.tar.gz"
-    sha256 "63a885c30ff5e6956bd0fc7e6d63293d9fca0a647549ac4c322302df359a308c"
+    url "https://github.com/Nimblesite/osprey/releases/download/v0.33.0/osprey-0.33.0-linux-x64.tar.gz"
+    sha256 "40c05f7eb0a8a231b3734ebab2cffc81223b049282fa783979363896846a1b70"
   end
 
   def install
@@ -25,6 +25,6 @@ class Osprey < Formula
   end
 
   test do
-    assert_match "osprey 0.32.0", shell_output("#{bin}/osprey --version")
+    assert_match "osprey 0.33.0", shell_output("#{bin}/osprey --version")
   end
 end
